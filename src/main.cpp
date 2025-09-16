@@ -1,20 +1,18 @@
 #include <iostream>
 #include <vector>
 
-// Recursively extract digits of n and store in result
 void extractDigits(int n, std::vector<int>& result) {
+    const int TEN_FOR_DIGIT = 10;
     if (n == 0) return;
-    extractDigits(n / 10, result); // recursion goes left to right
-    result.push_back(n % 10);      // take last digit
+    extractDigits(n / TEN_FOR_DIGIT, result); // recursion goes left to right
+    result.push_back(n % TEN_FOR_DIGIT);      // take last digit
 }
 
-// Define test case structure
 struct TestCase {
     int input;
     std::vector<int> expected;
 };
 
-// Function to run a single test
 void testExtractDigits(const TestCase& t) {
     std::vector<int> result;
     extractDigits(t.input, result);
@@ -36,6 +34,7 @@ int main() {
         {123, {1, 2, 3}},
         {405, {4, 0, 5}},
         {7,   {7}},
+        {8888,   {8,8,8,8}},
         {1002, {1, 0, 0, 2}}
     };
 
