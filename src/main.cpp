@@ -3,9 +3,10 @@
 
 // Recursively extract digits of n and store in result
 void extractDigits(int n, std::vector<int>& result) {
+    const int TEN_FOR_DIGIT = 10;
     if (n == 0) return;
-    extractDigits(n / 10, result); // recursion goes left to right
-    result.push_back(n % 10);      // take last digit
+    extractDigits(n / TEN_FOR_DIGIT, result); // recursion goes left to right
+    result.push_back(n % TEN_FOR_DIGIT);      // take last digit
 }
 
 // Define test case structure
