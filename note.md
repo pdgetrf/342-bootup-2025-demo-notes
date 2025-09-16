@@ -5,9 +5,10 @@ this is a demo during the git session.
 
 ```c++
 int main() {
-  printf("%s\n", "hello");
+  std::cout << "hello" << std::endl;
 }
 ```
+
 
 ## level 2
 
